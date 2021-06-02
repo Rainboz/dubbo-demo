@@ -6,7 +6,7 @@ dubbo学习，注解配置
 #### 软件架构
 软件架构说明
 
-springboot2.5.0+dubbo2.7.3+zookeeper3.4.14
+springboot2.1.6.RELEASE+dubbo2.7.3+zookeeper3.4.14
 
 #### 安装教程
 

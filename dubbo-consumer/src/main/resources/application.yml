@@ -5,6 +5,11 @@ dubbo:
       name: dubbo-consumer
     scan:
       base-packages: com.zhb.controller
+    consumer:
+      timeout: 5000
+      check: false  # 默认true.服务启动时候检查是否可用,服务不可用时无法启动项目, false则不检查
+      retries: 2    # 服务重试次数
     registry:
-      address: zookeeper://127.0.0.1:2181
+      id: test001
+      address: nacos://127.0.0.1:8848|zookeeper://127.0.0.1:2181
 

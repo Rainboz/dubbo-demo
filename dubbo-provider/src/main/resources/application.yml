@@ -9,7 +9,9 @@ dubbo:
   protocol:
     port: 20880
     name: dubbo
+  provider:
+    retries: -1        # 服务提供者无需重试
+    timeout: 10000     # 默认只有1s
   registry:
-    #zookeeper注册中心地址
-    address: zookeeper://127.0.0.1:2181
-    timeout: 15000
+    id: test001
+    address: nacos://127.0.0.1:8848|zookeeper://127.0.0.1:2181

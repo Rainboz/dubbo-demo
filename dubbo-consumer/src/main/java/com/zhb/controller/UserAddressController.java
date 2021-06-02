@@ -33,7 +33,7 @@ public class UserAddressController {
     }
 
     @RequestMapping("findAll")
-    public List<UserAddress> getUserAddressList(@RequestParam String userId){
+    public List<UserAddress> getUserAddressList(@RequestParam(required = false) String userId){
         log.info("入参{}",userId);
         return userService.getUserAddressList(userId);
     }

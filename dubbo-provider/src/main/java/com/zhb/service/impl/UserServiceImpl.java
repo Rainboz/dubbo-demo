@@ -25,10 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserAddress> getUserAddressList(String userId) {
         log.info("生产者getUserAddressList...");
-        if (Objects.equals("", userId) || Objects.isNull(userId)) {
-            log.error("用户id不能为空{}", userId);
-            return Lists.newArrayList();
-        }
+
         List<UserAddress> result = new ArrayList<>();
         UserAddress u1 = UserAddress.builder()
                 .id(1)
@@ -42,6 +39,10 @@ public class UserServiceImpl implements UserService {
                 .build();
         result.add(u1);
         result.add(u2);
+        if (Objects.equals("", userId) || Objects.isNull(userId)) {
+            log.error("用户id不能为空{}", userId);
+            return result;
+        }
         return result.stream().filter(f -> Objects.equals(f.getId(), Integer.valueOf(userId))).collect(Collectors.toList());
     }
 }
