@@ -1,0 +1,10 @@
+server:
+  port: 8085
+dubbo:
+    application:
+      name: dubbo-consumer
+    scan:
+      base-packages: com.zhb.controller
+    registry:
+      address: zookeeper://127.0.0.1:2181
+

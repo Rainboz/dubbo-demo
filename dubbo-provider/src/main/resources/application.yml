@@ -1,0 +1,15 @@
+server:
+  port: 8084
+dubbo:
+  application:
+    name: dubbo-provider
+  scan:
+    # 包名根据自己的实际情况写
+    base-packages: com.zhb.service.impl
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    #zookeeper注册中心地址
+    address: zookeeper://127.0.0.1:2181
+    timeout: 15000
